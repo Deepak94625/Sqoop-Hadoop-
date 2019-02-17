@@ -1,0 +1,1 @@
+sqoop import --connect jdbc:mysql://localhost:3306/vaibhav --username root --password hr  --table employees --target-dir /data/sqoop/import/table --append  --columns 'FIRST_NAME,LAST_NAME'  --where 'SALARY > 9000'
