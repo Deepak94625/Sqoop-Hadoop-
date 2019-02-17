@@ -1,0 +1,1 @@
+sqoop import --connect jdbc:mysql://localhost:3306/vaibhav --table employees --username root --P --target-dir /data/sqoop/Examples/import1/
