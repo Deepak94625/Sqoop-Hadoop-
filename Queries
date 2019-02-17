@@ -1,0 +1,10 @@
+=============COLUMNAR IMPROT===============
+
+sqoop import --connect jdbc:mysql://localhost:3306/vaibhav --table employees --username root --password hr --target-dir /data/sqoop/Examples/import1/ --columns 'EMPLOYEE_ID,FIRST_NAME,SALARY'
+
+
+=============CONDITIONAL IMPROT===============
+
+sqoop import --connect jdbc:mysql://localhost:3306/vaibhav --table employees --username root --password hr --target-dir /data/sqoop/Examples/import3/ --where 'SALARY > 15000'
+
+sqoop import --connect jdbc:mysql://localhost:3306/vaibhav --username root --password hr --target-dir /data/sqoop/example_import2 --query 'select avg(salary) from employees JOIN DEPT on (employees.DEPARTMENT_ID = DEPT.DID) WHERE $CONDITIONS' --split-by 'EMPLOYEE_ID'
