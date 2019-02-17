@@ -1,0 +1,14 @@
+Q : What is the approximate time taken to laod 50 million rows of data in HDFS from RDBMS 
+
+Ans : 
+
+Need to get the no of rows  , Can't determine from number of columns 
+It totally depend upon number of task slots (1 unit of CPU and I unit of Ram , Can be confugired) 
+It is advisible to give n/2 no of available slots ( where n -> total no of task slots availabale )
+
+Say that there is 50gb of data 
+
+5 task slots are assigned and it takes around 10 mins to process  500 MB of data . 
+Thus after 10 mins it will process 2.5Gb of data 
+
+It will take around 200 mins to process the 50 GB of data
